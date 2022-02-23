@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FlowersChemistryWorkers</string>
+    <string name="enter">Войти</string>
+    <string name="login">Логин</string>
+    <string name="_996">+996</string>
+    <string name="next">Далее</string>
+    <string name="password">Пароль</string>
+    <string name="wrong_data">Неправильный логин или пароль</string>
+    <string name="my_orders">Мои заказы</string>
+    <string name="all_orders">Все заказы</string>
+    <string name="profile">Профиль</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="accept">Принять</string>
+    <string name="today">Сегодня</string>
+    <string name="quantity">Количество</string>
+    <string name="sum">Сумма</string>
+    <string name="phone_number">Номер телефона</string>
+</resources>
