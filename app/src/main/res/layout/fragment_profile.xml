@@ -1,15 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FragmentProfile"
-        android:textSize="30sp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/tv_title_profile"
+        style="@style/TextView_22sp_medium"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/profile"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_salary"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginTop="20dp"
+        android:text="@string/salary"
+        android:textColor="@color/txt_grey"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_profile" />
+
+    <TextView
+        android:id="@+id/salary_sum"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginStart="3dp"
+        android:text="1000"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_salary"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_salary"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_salary" />
+
+    <TextView
+        android:id="@+id/tv_txt"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginStart="2dp"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/salary_sum"
+        app:layout_constraintStart_toEndOf="@+id/salary_sum"
+        app:layout_constraintTop_toTopOf="@+id/salary_sum" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conteiner"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_with_radius_corner"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_salary">
+
+        <Spinner
+            android:id="@+id/spinner_period"
+            style="@style/MySpinnerLook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/period"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_title_my_data"
+        style="@style/TextView_20sp_medium"
+        android:layout_marginTop="30dp"
+        android:text="@string/my_data"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/conteiner" />
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="32dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_my_data" />
+
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/TextView_14sp_medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_name" />
+
+    <TextView
+        android:id="@+id/tv_title_phone"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="32dp"
+        android:text="@string/phone"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        style="@style/TextView_14sp_medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:inputType="phone"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_phone" />
+
+    <TextView
+        android:id="@+id/tv_title_password"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="32dp"
+        android:text="@string/password"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/TextView_14sp_medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_password" />
+
+    <TextView
+        android:id="@+id/tv_exit"
+        style="@style/TextView_18sp_medium"
+        android:layout_marginBottom="39dp"
+        android:text="@string/exit"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

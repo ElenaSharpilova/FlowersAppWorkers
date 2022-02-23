@@ -12,12 +12,14 @@
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/drawable/ic_ellipse_1.xml" value="0.2" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/drawable/ic_orders.xml" value="0.2203125" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/drawable/ic_user_profile.xml" value="0.2203125" />
+        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/drawable/shape_with_radius_corner.xml" value="0.2203125" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/drawable/splash_image.xml" value="0.19907407407407407" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/activity_registration.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_all_orders.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_detail_order_from_all_orders.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_my_orders.xml" value="0.20416666666666666" />
-        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_all_orders.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
       </map>

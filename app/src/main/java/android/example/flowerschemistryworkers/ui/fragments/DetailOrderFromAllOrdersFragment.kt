@@ -1,30 +1,22 @@
 package android.example.flowerschemistryworkers.ui.fragments
 
-import android.example.flowerschemistryworkers.R
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.example.flowerschemistryworkers.databinding.FragmentMyOrdersBinding
-import androidx.navigation.Navigation
+import android.example.flowerschemistryworkers.databinding.FragmentDetailOrderFromAllOrdersBinding
 
-class MyOrdersFragment : Fragment() {
-    private var _binding: FragmentMyOrdersBinding? = null
+class DetailOrderFromAllOrdersFragment : Fragment() {
+    private var _binding: FragmentDetailOrderFromAllOrdersBinding? = null
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMyOrdersBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailOrderFromAllOrdersBinding.inflate(inflater, container, false)
         val view = binding.root
-
-        binding.button.setOnClickListener {
-            Navigation.findNavController(view)
-                .navigate(R.id.action_myOrderFragment_to_detailOrderFromAllOrdersFragment)
-        }
 
         return view
 
@@ -34,5 +26,4 @@ class MyOrdersFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

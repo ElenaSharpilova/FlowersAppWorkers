@@ -23,4 +23,11 @@
         <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:statusBarColor">@color/white</item>
     </style>
+
+    <style name="MySpinnerLook"
+        parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

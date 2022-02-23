@@ -9,11 +9,35 @@
     <string name="my_orders">Мои заказы</string>
     <string name="all_orders">Все заказы</string>
     <string name="profile">Профиль</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="accept">Принять</string>
     <string name="today">Сегодня</string>
     <string name="quantity">Количество</string>
     <string name="sum">Сумма</string>
     <string name="phone_number">Номер телефона</string>
+    <string name="salary">Зарплата:</string>
+    <string name="som">сом</string>
+    <string name="my_data">Мои данные</string>
+    <string name="name">Имя</string>
+    <string name="phone">Телефон:</string>
+    <string name="exit">Выйти</string>
+
+    <string-array name="period">
+        <item>Сегодня</item>
+        <item>Последние 24 часа</item>
+        <item>Последние 7 дней</item>
+        <item>Последние 30 дней</item>
+        <item>Последние 90 дней</item>
+        <item>Последние 6 месяцев</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="discount">Скидка</string>
+    <string name="delivery">Доставка</string>
+    <string name="total">Всего</string>
+    <string name="sender">Отправитель:</string>
+    <string name="sender_phone">Телефон отправителя</string>
+    <string name="wishes_sender">Пожелания отправителя</string>
+    <string name="recevier">Получатель:</string>
+    <string name="phone_receiver">Телефон получателя</string>
+    <string name="note_to_receiver">Записка к получателю</string>
 </resources>
