@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.MyBouquetFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/my_orders"
+            style="@style/TextView_22sp_medium"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/my_bouquet"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_active"
+            style="@style/my_button"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="33dp"
+            android:text="@string/active"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/pink"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/pink_dark"
+            app:strokeWidth="1dp"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/my_orders" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sold"
+            style="@style/my_button"
+            android:layout_marginEnd="4dp"
+            android:text="@string/sold"
+            android:textColor="@color/pink"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/pink_dark"
+            app:strokeWidth="1dp"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintTop_toTopOf="@+id/btn_active" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_bouquet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/btn_active" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

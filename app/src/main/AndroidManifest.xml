@@ -13,7 +13,11 @@
             android:name=".ui.RegistrationActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.CourierActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.FloristActivity"
             android:exported="true" />
         <activity
             android:name=".ui.SplashActivity"

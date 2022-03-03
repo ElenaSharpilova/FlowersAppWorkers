@@ -2,7 +2,6 @@ package android.example.flowerschemistryworkers.ui
 
 import android.content.Intent
 import android.example.flowerschemistryworkers.R
-import android.example.flowerschemistryworkers.databinding.ActivityMainBinding
 import android.example.flowerschemistryworkers.databinding.ActivityRegistrationBinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,7 +25,7 @@ class RegistrationActivity : AppCompatActivity() {
         showPassword(isShowPass)
 
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, FloristActivity::class.java)
             startActivity(intent)
         }
     }

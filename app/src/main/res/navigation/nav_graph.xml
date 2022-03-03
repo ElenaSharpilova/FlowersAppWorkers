@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_allOrdersFragment2_to_myOrdersFragment"
             app:destination="@id/myOrderFragment" />
+        <action
+            android:id="@+id/action_allOrdersFragment_to_detailOrderFromAllOrdersFragment"
+            app:destination="@id/detailOrderFromAllOrdersFragment" />
     </fragment>
     <fragment
         android:id="@+id/myOrderFragment"
@@ -23,8 +26,8 @@
             android:id="@+id/action_myOrdersFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_myOrderFragment_to_detailOrderFromAllOrdersFragment"
-            app:destination="@id/detailOrderFromAllOrdersFragment" />
+            android:id="@+id/action_myOrderFragment_to_detailOrderFromMyOrdersFragment"
+            app:destination="@id/detailOrderFromMyOrdersFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -36,4 +39,9 @@
         android:name="android.example.flowerschemistryworkers.ui.fragments.DetailOrderFromAllOrdersFragment"
         android:label="fragment_detail_order_from_all_orders"
         tools:layout="@layout/fragment_detail_order_from_all_orders" />
+    <fragment
+        android:id="@+id/detailOrderFromMyOrdersFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.DetailOrderFromMyOrdersFragment"
+        android:label="fragment_detail_order_from_my_orders"
+        tools:layout="@layout/fragment_detail_order_from_my_orders" />
 </navigation>

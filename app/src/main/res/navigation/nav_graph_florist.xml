@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_florist"
+    app:startDestination="@id/addBouquetFragment">
+
+    <fragment
+        android:id="@+id/addBouquetFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.AddBouquetFragment"
+        android:label="fragment_add_bouquet"
+        tools:layout="@layout/fragment_add_bouquet" >
+        <action
+            android:id="@+id/action_addBouquetFragment_to_myBouquetFragment"
+            app:destination="@id/myBouquetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBouquetFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.MyBouquetFragment"
+        android:label="fragment_my_bouquet"
+        tools:layout="@layout/fragment_my_bouquet" >
+        <action
+            android:id="@+id/action_myBouquetFragment_to_profileFloristFragment"
+            app:destination="@id/profileFloristFragment" />
+        <action
+            android:id="@+id/action_myBouquetFragment_to_descriptionBouquetFragment"
+            app:destination="@id/descriptionBouquetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFloristFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.ProfileFloristFragment"
+        android:label="fragment_profile_florist"
+        tools:layout="@layout/fragment_profile_florist" />
+    <fragment
+        android:id="@+id/descriptionBouquetFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.DescriptionBouquetFragment"
+        android:label="fragment_description_bouquet"
+        tools:layout="@layout/fragment_description_bouquet" />
+</navigation>

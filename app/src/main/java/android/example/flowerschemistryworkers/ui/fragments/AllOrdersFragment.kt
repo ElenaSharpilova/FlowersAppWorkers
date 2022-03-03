@@ -1,5 +1,6 @@
 package android.example.flowerschemistryworkers.ui.fragments
 
+import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.adapters.AllOrdersAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistryworkers.databinding.FragmentAllOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
+import android.example.flowerschemistryworkers.utils.OnItemClickListenerAllOrders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
-class AllOrdersFragment : Fragment() {
+class AllOrdersFragment : Fragment(), OnItemClickListenerAllOrders {
     private var _binding: FragmentAllOrdersBinding? = null
     private val binding get() = _binding!!
-    private val adapterAllOrders by lazy{ AllOrdersAdapter() }
+    private val adapterAllOrders by lazy { AllOrdersAdapter(this@AllOrdersFragment) }
 
     private val itemListAllOrders by lazy {
         arrayListOf(
@@ -42,12 +45,16 @@ class AllOrdersFragment : Fragment() {
         _binding = null
     }
 
+
     private fun setUpRecyclerViewAllOrders(){
         binding.rvAllOrders.apply {
-            adapter = adapterAllOrders
             layoutManager = LinearLayoutManager(requireContext())
+            adapter = adapterAllOrders
+            adapterAllOrders.setList(itemListAllOrders)
         }
-        adapterAllOrders.setList(itemListAllOrders)
     }
 
+    override fun onItemClick(item: Order) {
+        findNavController().navigate(R.id.action_allOrdersFragment_to_detailOrderFromAllOrdersFragment)
+    }
 }

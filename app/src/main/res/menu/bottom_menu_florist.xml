@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/addBouquetFragment"
+        android:title="@string/add_bouquet"
+        android:icon="@drawable/ic_add_bouquet"/>
+    <item
+        android:id="@+id/myBouquetFragment"
+        android:title="@string/my_bouquet"
+        android:icon="@drawable/ic_flower"/>
+    <item
+        android:id="@+id/profileFloristFragment"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_user_profile"/>
+</menu>

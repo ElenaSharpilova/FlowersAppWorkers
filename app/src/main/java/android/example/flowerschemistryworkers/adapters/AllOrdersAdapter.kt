@@ -4,15 +4,17 @@ import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemAllOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
 import android.example.flowerschemistryworkers.utils.AllOrdersDiffUtil
+import android.example.flowerschemistryworkers.utils.OnItemClickListenerAllOrders
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class AllOrdersAdapter: RecyclerView.Adapter<AllOrdersAdapter.ViewHolder>() {
-    private var list = mutableListOf<Order>()
+class AllOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
+    : RecyclerView.Adapter<AllOrdersAdapter.ViewHolder>() {
 
+    var list = ArrayList <Order>()
     fun setList(newList: MutableList<Order>){
         val diffCallback = AllOrdersDiffUtil(list, newList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -23,12 +25,16 @@ class AllOrdersAdapter: RecyclerView.Adapter<AllOrdersAdapter.ViewHolder>() {
 
     class ViewHolder (item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemAllOrdersBinding.bind(item)
-        fun bind(item: Order) = with(binding){
+        fun bind(item: Order, action:OnItemClickListenerAllOrders) = with(binding){
             addressShop.text = item.addressShop
             addressReceiver.text = item.addressReceiver
             tvTime.text = item.time
             tvQuantity.text = item.quantity.toString()
             tvSum.text = item.sum.toString()
+
+            itemView.setOnClickListener{
+                action.onItemClick(item)
+            }
         }
     }
 
@@ -38,7 +44,7 @@ class AllOrdersAdapter: RecyclerView.Adapter<AllOrdersAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position],clickListener)
     }
 
     override fun getItemCount(): Int {

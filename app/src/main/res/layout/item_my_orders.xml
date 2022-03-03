@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_bouquet"
+    android:layout_width="match_parent"
+    android:layout_height="144dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="13dp"
+    app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ellipse_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/ic_elipse_2"
+                app:layout_constraintBottom_toTopOf="@id/iv3"
+                app:layout_constraintEnd_toEndOf="@+id/iv1"
+                app:layout_constraintStart_toStartOf="@+id/iv1"
+                app:layout_constraintTop_toBottomOf="@id/iv1" />
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ellipse_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/address_shop"
+            style="@style/TextView_14sp_medium"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="16dp"
+            android:text="Токтогула 197а"
+            app:layout_constraintStart_toEndOf="@+id/container"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/address_receiver"
+            style="@style/TextView_14sp_medium"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="22dp"
+            android:text="7-микрорайон дом-1 кв-55 под..."
+            app:layout_constraintStart_toEndOf="@+id/container"
+            app:layout_constraintTop_toBottomOf="@id/address_shop" />
+
+        <TextView
+            android:id="@+id/tv_title_time"
+            style="@style/TextView_10sp_grey"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/today"
+            app:layout_constraintEnd_toStartOf="@+id/tv_title_customer"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address_receiver" />
+
+        <TextView
+            android:id="@+id/tv_title_customer"
+            style="@style/TextView_10sp_grey"
+            android:text="Заказчик"
+            app:layout_constraintEnd_toStartOf="@+id/tv_title_sum"
+            app:layout_constraintStart_toEndOf="@+id/tv_title_time"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_time" />
+
+        <TextView
+            android:id="@+id/tv_title_sum"
+            style="@style/TextView_10sp_grey"
+            android:layout_marginEnd="21dp"
+            android:text="@string/sum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_title_customer"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_customer" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/TextView_14sp_medium"
+            android:layout_marginTop="1dp"
+            android:text="12:34"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_time"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_time" />
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            style="@style/TextView_14sp_medium"
+            android:text="Карина"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title_customer"
+            app:layout_constraintStart_toStartOf="@id/tv_title_customer"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_customer" />
+
+        <TextView
+            android:id="@+id/tv_sum"
+            style="@style/TextView_14sp_medium"
+            android:text="2500"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title_sum"
+            app:layout_constraintStart_toStartOf="@id/tv_title_sum"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_sum" />
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="14dp"
+            android:src="@drawable/status_active"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
