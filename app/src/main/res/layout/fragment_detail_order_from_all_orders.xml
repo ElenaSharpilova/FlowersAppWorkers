@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/start_guideline"
@@ -42,9 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginTop="54dp"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-           app:layout_constraintTop_toBottomOf="@id/tv_title">
+            app:layout_constraintTop_toBottomOf="@id/tv_title">
 
             <ImageView
                 android:id="@+id/iv1"
@@ -77,34 +78,77 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/address_shop"
-            style="@style/TextView_14sp_medium"
-            android:layout_marginStart="7dp"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_address_shop"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="41dp"
-            android:text="Токтогула 197а"
-            app:layout_constraintStart_toEndOf="@+id/container"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
 
-        <TextView
-            android:id="@+id/address_receiver"
-            style="@style/TextView_14sp_medium"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="24dp"
-            android:text="7-микрорайон дом-1 кв-55 под..."
-            app:layout_constraintStart_toEndOf="@+id/container"
-            app:layout_constraintTop_toBottomOf="@id/address_shop" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/address_shop"
+                    style="@style/TextView_14sp_medium"
+                    android:layout_marginStart="7dp"
+                    android:text="Токтогула 197а"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_address_receiver"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_address_shop"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/address_receiver"
+                    style="@style/TextView_14sp_medium"
+                    android:layout_marginStart="7dp"
+                    android:text="7-микрорайон дом 1 кв 55 подьезд 3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_title_time"
             style="@style/TextView_10sp_grey"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="7dp"
             android:text="@string/today"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="@id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/address_receiver" />
+            app:layout_constraintTop_toBottomOf="@+id/cardview_address_receiver" />
 
         <TextView
             android:id="@+id/tv_time"
@@ -234,27 +278,26 @@
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_sender" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_name_sender"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+        <TextView
+            android:id="@+id/name_sender"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:text="Адилет"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_sender_name"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_sender_name" />
 
-            <EditText
-                android:id="@+id/ed_name_sender"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@null"
-                style="@style/TextView_16sp_medium"
-                android:layout_marginStart="3dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/name_sender"
+            app:layout_constraintTop_toBottomOf="@+id/name_sender" />
 
-        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_title_sender_phone"
@@ -263,29 +306,28 @@
             android:layout_marginStart="19dp"
             android:text="@string/sender_phone"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_name_sender" />
+            app:layout_constraintTop_toBottomOf="@+id/name_sender" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_phone_sender"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+
+        <TextView
+            android:id="@+id/phone_number_sender"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="10dp"
+            android:text="+996 773 123 456"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_sender_phone"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_sender_phone" />
 
-            <EditText
-                android:id="@+id/ed_phone_number"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@null"
-                style="@style/TextView_16sp_medium"
-                android:paddingStart="19dp" />
-
-        </com.google.android.material.card.MaterialCardView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/phone_number_sender"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_sender" />
 
         <TextView
             android:id="@+id/tv_title_wishes"
@@ -294,29 +336,28 @@
             android:layout_marginStart="19dp"
             android:text="@string/wishes_sender"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_phone_sender" />
+            app:layout_constraintTop_toBottomOf="@+id/phone_number_sender" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_wishes"
+
+        <TextView
+            android:id="@+id/tv_wishes"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginTop="10dp"
+            android:text="Доставить как можно скореe"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_wishes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_wishes" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line3"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_wishes"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="1dp">
+            android:layout_height="0.5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/tv_wishes"
+            app:layout_constraintTop_toBottomOf="@+id/tv_wishes" />
 
-            <EditText
-                android:id="@+id/ed_wishes"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                style="@style/TextView_16sp_medium"
-                android:paddingStart="19dp" />
-
-        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_receiver"
@@ -325,38 +366,36 @@
             style="@style/TextView_16sp_medium"
             android:text="@string/recevier"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_wishes" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_wishes" />
 
         <TextView
             android:id="@+id/tv_title_receiver_name"
             style="@style/TextView_12sp_grey"
             android:layout_marginStart="19dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:text="@string/name"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tv_receiver" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_name_receiver"
+
+        <TextView
+            android:id="@+id/name_receiver"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginTop="10dp"
+            android:text="Мария"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_receiver_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_receiver_name" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line5"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_receiver_name"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="1dp">
-
-            <EditText
-                android:id="@+id/ed_name_receiver"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@null"
-                style="@style/TextView_16sp_medium"
-                android:paddingStart="19dp" />
-
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_height="0.5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/name_receiver"
+            app:layout_constraintTop_toBottomOf="@+id/name_receiver" />
 
         <TextView
             android:id="@+id/tv_title_receiver_phone"
@@ -365,29 +404,28 @@
             android:layout_marginStart="19dp"
             android:text="@string/phone_receiver"
             app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_name_receiver" />
+            app:layout_constraintTop_toBottomOf="@+id/name_receiver" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardview_phone_receiver"
+
+        <TextView
+            android:id="@+id/phone_receiver"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginTop="10dp"
+            android:text="+996 773 123 456"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_receiver_phone"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_receiver_phone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line4"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="3dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_receiver_phone"
-            app:strokeColor="@color/grey"
-            app:strokeWidth="1dp">
+            android:layout_height="0.5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/phone_receiver"
+            app:layout_constraintTop_toBottomOf="@+id/phone_receiver" />
 
-            <EditText
-                android:id="@+id/ed_phone_receiver"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@null"
-                style="@style/TextView_16sp_medium"
-                android:paddingStart="19dp" />
-
-        </com.google.android.material.card.MaterialCardView>
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -396,7 +434,7 @@
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="@string/accept"
-            app:layout_constraintTop_toBottomOf="@id/cardview_phone_receiver"
+            app:layout_constraintTop_toBottomOf="@id/phone_receiver"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

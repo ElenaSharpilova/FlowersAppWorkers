@@ -112,7 +112,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title_time" />
 
         <TextView
-            android:id="@+id/tv_quantity"
+            android:id="@+id/tv_name_reciever"
             style="@style/TextView_14sp_medium"
             android:text="Карина"
             app:layout_constraintEnd_toEndOf="@+id/tv_title_customer"
@@ -127,16 +127,36 @@
             app:layout_constraintStart_toStartOf="@id/tv_title_sum"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_sum" />
 
-        <ImageView
-            android:id="@+id/discount_10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="14dp"
-            android:src="@drawable/discount_10"
-            android:visibility="visible"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="48dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="22dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/red"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="+10%"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -11,27 +11,28 @@ import android.view.ViewGroup
 import android.example.flowerschemistryworkers.databinding.FragmentMyOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
 import android.example.flowerschemistryworkers.utils.OnItemClickListenerAllOrders
+import android.example.flowerschemistryworkers.utils.OnItemClickListenerMyOrders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
-class MyOrdersFragment : Fragment(), OnItemClickListenerAllOrders {
+class MyOrdersFragment : Fragment(), OnItemClickListenerMyOrders {
     private var _binding: FragmentMyOrdersBinding? = null
     private val binding get() = _binding!!
     private val adapterMyOrders by lazy { MyOrdersAdapter(this@MyOrdersFragment) }
 
     private val itemListActive by lazy {
         arrayListOf(
-            Order(1, "ул. Фучика 285", "мкр.Аламедин-1, д.22, кв.134", "11:09", 1, 2399),
-            Order(2, "ул. Байтик Баатыра 233", "ул. Пушкина 66", "22:07", 6, 1000)
+            Order(1, "ул. Фучика 285", "мкр.Аламедин-1, д.22, кв.134", "11:09", "Айгерим", 2399),
+            Order(2, "ул. Байтик Баатыра 233", "ул. Пушкина 66", "22:07", "Айбек", 1000)
         )}
 
     private val itemListCompleted by lazy {
         arrayListOf(
-            Order(1, "ул. Ахунбаева 90", "мкр.Аламедин-1, д.22, кв.134", "11:09", 1, 2399),
-            Order(2, "ул. Ж.Пудовкина 30", "ул. Пушкина 66", "22:07", 6, 1000),
-            Order(3, "ул. Токтогул Сатылганова 176", "ул. Т. Молдо 78, д.22, кв.134", "07:45", 3, 4566),
-            Order(4, "ул.  12 мкр, д.3, кв. 6", "ул. Т. Молдо 78, д.22, кв.134", "07:45", 3, 4566)
+            Order(1, "ул. Ахунбаева 90", "мкр.Аламедин-1, д.22, кв.134", "11:09", "Кубан", 2399),
+            Order(2, "ул. Ж.Пудовкина 30", "ул. Пушкина 66", "22:07", "Айгерим", 1000),
+            Order(3, "ул. Токтогул Сатылганова 176", "ул. Т. Молдо 78, д.22, кв.134", "07:45", "Бегим", 4566),
+            Order(4, "ул.  12 мкр, д.3, кв. 6", "ул. Т. Молдо 78, д.22, кв.134", "07:45", "Элина", 4566)
         )}
 
 

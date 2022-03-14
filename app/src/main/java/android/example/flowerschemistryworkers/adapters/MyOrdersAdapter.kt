@@ -5,13 +5,14 @@ import android.example.flowerschemistryworkers.databinding.ItemMyOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
 import android.example.flowerschemistryworkers.utils.MyOrdersDiffUtil
 import android.example.flowerschemistryworkers.utils.OnItemClickListenerAllOrders
+import android.example.flowerschemistryworkers.utils.OnItemClickListenerMyOrders
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class MyOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
+class MyOrdersAdapter(val clickListener: OnItemClickListenerMyOrders)
     :RecyclerView.Adapter<MyOrdersAdapter.ViewHolder>() {
 
     var list = ArrayList <Order>()
@@ -25,11 +26,11 @@ class MyOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
 
     class ViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemMyOrdersBinding.bind(item)
-        fun bind(item: Order, action:OnItemClickListenerAllOrders) = with(binding){
+        fun bind(item: Order, action:OnItemClickListenerMyOrders) = with(binding){
             addressShop.text = item.addressShop
             addressReceiver.text = item.addressReceiver
             tvTime.text = item.time
-            tvQuantity.text = item.quantity.toString()
+            tvQuantity.text = item.name.toString()
             tvSum.text = item.sum.toString()
 
             itemView.setOnClickListener{

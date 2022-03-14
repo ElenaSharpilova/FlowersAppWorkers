@@ -11,6 +11,8 @@ import android.example.flowerschemistryworkers.databinding.FragmentDetailOrderFr
 import android.example.flowerschemistryworkers.databinding.FragmentMyOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
 import android.example.flowerschemistryworkers.models.OrderDetail
+import android.graphics.Color
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -35,6 +37,27 @@ class DetailOrderFromMyOrdersFragment : Fragment() {
         val view = binding.root
 
         setUpRecyclerViewDetailOrders()
+
+        binding.btnReceivedOrder.setOnClickListener {
+            binding.btnReceivedOrder.visibility = View.GONE
+            binding.btnAcceptedOrder.visibility = View.VISIBLE
+        }
+
+        binding.btnAcceptedOrder.setOnClickListener {
+            binding.btnAcceptedOrder.visibility = View.GONE
+            binding.btnOnWay.visibility = View.VISIBLE
+        }
+
+        binding.btnOnWay.setOnClickListener {
+            binding.btnOnWay.visibility = View.GONE
+            binding.btnArrived.visibility = View.VISIBLE
+        }
+
+        binding.btnArrived.setOnClickListener {
+            binding.btnArrived.visibility = View.GONE
+            binding.btnCompleted.visibility = View.VISIBLE
+        }
+
 
         return view
 

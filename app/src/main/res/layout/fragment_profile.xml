@@ -1,253 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_constraintBottom_toBottomOf="parent"
     tools:context=".ui.fragments.ProfileFragment">
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conteiner2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/start_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/end_guideline"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
+        android:layout_height="273dp"
+        android:background="@color/pink_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tv_title_profile"
             style="@style/TextView_22sp_medium"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="19dp"
             android:layout_marginTop="20dp"
             android:text="@string/profile"
-            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/conteiner2"
-            android:layout_width="match_parent"
-            android:layout_height="273dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/pink_light"
+        <TextView
+            android:id="@+id/salary_sum"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginTop="52dp"
+            android:text="23 0000"
+            android:textColor="@color/pink"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.408"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_profile">
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_profile" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/conteiner_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/shape_with_radius_corner"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tv_txt"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginStart="8dp"
+            android:text="@string/som"
+            android:textColor="@color/pink"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/salary_sum"
+            app:layout_constraintStart_toEndOf="@+id/salary_sum"
+            app:layout_constraintTop_toTopOf="@+id/salary_sum" />
 
-                <Spinner
-                    android:id="@+id/spinner_period"
-                    style="@style/MySpinnerLook"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:entries="@array/period"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_title_salary"
+            style="@style/TextView_16sp_medium"
+            android:layout_marginBottom="4dp"
+            android:text="@string/salary"
+            android:textColor="@color/txt_grey"
+            app:layout_constraintBottom_toTopOf="@+id/salary_sum"
+            app:layout_constraintStart_toStartOf="@+id/salary_sum" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_title_order_done"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="8dp"
+            android:text="Заказов выполнено"
+            app:layout_constraintStart_toStartOf="@+id/salary_sum"
+            app:layout_constraintTop_toBottomOf="@+id/salary_sum" />
 
-            <TextView
-                android:id="@+id/salary_sum"
-                style="@style/TextView_16sp_medium"
-                android:layout_marginTop="76dp"
-                android:text="23 0000"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.408"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/conteiner_spinner" />
+        <TextView
+            android:id="@+id/tv_title_order_done_quantety"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginStart="2dp"
+            android:text="38"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_order_done"
+            app:layout_constraintStart_toEndOf="@+id/tv_title_order_done"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_order_done" />
 
-            <TextView
-                android:id="@+id/tv_txt"
-                style="@style/TextView_16sp_medium"
-                android:layout_marginStart="8dp"
-                android:text="@string/som"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="@+id/salary_sum"
-                app:layout_constraintStart_toEndOf="@+id/salary_sum"
-                app:layout_constraintTop_toTopOf="@+id/salary_sum" />
-
-            <TextView
-                android:id="@+id/tv_title_salary"
-                style="@style/TextView_16sp_medium"
-                android:layout_marginTop="2dp"
-                android:text="@string/salary"
-                android:textAllCaps="true"
-                android:textColor="@color/txt_grey"
-                app:layout_constraintEnd_toEndOf="@+id/tv_txt"
-                app:layout_constraintStart_toStartOf="@+id/salary_sum"
-                app:layout_constraintTop_toBottomOf="@+id/salary_sum" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/base_cardview"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="43dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/conteiner2">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="1dp" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_end="1dp" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_begin="1dp" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_end="1dp" />
-
-                <TextView
-                    android:id="@+id/tv_title_my_data"
-                    style="@style/TextView_20sp_medium"
-                    android:text="@string/my_data"
-                    app:layout_constraintStart_toStartOf="@+id/guideline1"
-                    app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-                <ImageView
-                    android:id="@+id/arrowBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="18dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_title_my_data"
-                    app:layout_constraintStart_toEndOf="@+id/tv_title_my_data"
-                    app:layout_constraintTop_toTopOf="@+id/tv_title_my_data"
-                    app:srcCompat="@drawable/ic_arrow_down" />
-
-                <TextView
-                    android:id="@+id/tv_title_name"
-                    style="@style/TextView_12sp_grey"
-                    android:layout_marginTop="32dp"
-                    android:text="@string/name"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_my_data" />
-
-                <EditText
-                    android:id="@+id/et_name"
-                    style="@style/TextView_14sp_medium"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    app:layout_constraintEnd_toEndOf="@id/guideline2"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_name" />
-
-                <TextView
-                    android:id="@+id/tv_title_phone"
-                    style="@style/TextView_12sp_grey"
-                    android:layout_marginTop="32dp"
-                    android:text="@string/phone"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@+id/et_name" />
-
-                <EditText
-                    android:id="@+id/et_phone"
-                    style="@style/TextView_14sp_medium"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:inputType="phone"
-                    app:layout_constraintEnd_toStartOf="@id/guideline2"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_phone" />
-
-                <TextView
-                    android:id="@+id/tv_title_password"
-                    style="@style/TextView_12sp_grey"
-                    android:layout_marginTop="32dp"
-                    android:text="@string/password"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@+id/et_phone" />
-
-                <EditText
-                    android:id="@+id/et_password"
-                    style="@style/TextView_14sp_medium"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    app:layout_constraintEnd_toStartOf="@id/guideline2"
-                    app:layout_constraintStart_toStartOf="@id/guideline1"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_password" />
-
-                <androidx.constraintlayout.widget.Group
-                    android:id="@+id/card_group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:constraint_referenced_ids="tv_title_name,et_name,tv_title_phone,et_phone,tv_title_password,et_password"
-                    tools:visibility="gone" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_exit"
-            style="@style/button_white"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="14dp"
-            android:layout_marginBottom="29dp"
-            android:text="@string/exit"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/image_profile_1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/base_cardview" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_profile_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conteiner_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_with_radius_corner"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/spinner_period"
+            style="@style/MySpinnerLook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/period"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_title_my_data"
+        style="@style/TextView_20sp_medium"
+        android:layout_marginTop="36dp"
+        android:text="@string/my_data"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/conteiner2" />
+
+    <TextView
+        android:id="@+id/tv_title_name"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="24dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_my_data" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginTop="8dp"
+        android:text="Адилет"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_name" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/tv_title_phone"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="20dp"
+        android:text="@string/phone"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/phone_number"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginTop="8dp"
+        android:text="+996 773 123 456"
+        app:layout_constraintStart_toStartOf="@+id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_phone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line2"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/phone_number"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_exit"
+        style="@style/button_white"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

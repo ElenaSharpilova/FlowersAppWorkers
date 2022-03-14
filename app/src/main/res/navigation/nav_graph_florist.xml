@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_florist"
-    app:startDestination="@id/addBouquetFragment">
+    app:startDestination="@id/constructorBouquetFragment">
 
     <fragment
-        android:id="@+id/addBouquetFragment"
-        android:name="android.example.flowerschemistryworkers.ui.fragments.AddBouquetFragment"
-        android:label="fragment_add_bouquet"
-        tools:layout="@layout/fragment_add_bouquet" >
+        android:id="@+id/constructorBouquetFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.СonstructorBouquetFragment"
+        android:label="fragment_constructor_bouquet"
+        tools:layout="@layout/fragment_constructor_bouquet" >
         <action
-            android:id="@+id/action_addBouquetFragment_to_myBouquetFragment"
+            android:id="@+id/action_constructorBouquetFragment_to_myBouquetFragment"
             app:destination="@id/myBouquetFragment" />
+        <action
+            android:id="@+id/action_constructorBouquetFragment_to_addBouquetFragment"
+            app:destination="@id/addBouquetFragment" />
     </fragment>
     <fragment
         android:id="@+id/myBouquetFragment"
@@ -35,5 +38,18 @@
         android:id="@+id/descriptionBouquetFragment"
         android:name="android.example.flowerschemistryworkers.ui.fragments.DescriptionBouquetFragment"
         android:label="fragment_description_bouquet"
-        tools:layout="@layout/fragment_description_bouquet" />
+        tools:layout="@layout/fragment_description_bouquet" >
+        <action
+            android:id="@+id/action_descriptionBouquetFragment_to_myBouquetFragment"
+            app:destination="@id/myBouquetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBouquetFragment"
+        android:name="android.example.flowerschemistryworkers.ui.fragments.AddBouquetFragment"
+        android:label="fragment_add_bouquet"
+        tools:layout="@layout/fragment_add_bouquet" >
+        <action
+            android:id="@+id/action_addBouquetFragment_to_constructorBouquetFragment"
+            app:destination="@id/constructorBouquetFragment" />
+    </fragment>
 </navigation>

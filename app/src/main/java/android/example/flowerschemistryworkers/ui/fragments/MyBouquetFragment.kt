@@ -1,6 +1,6 @@
 package android.example.flowerschemistryworkers.ui.fragments
 
-import android.content.res.ColorStateList
+
 import android.example.flowerschemistryworkers.R
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,11 +11,8 @@ import android.example.flowerschemistryworkers.adapters.MyBouquetAdapter
 import android.example.flowerschemistryworkers.databinding.FragmentMyBouquetBinding
 import android.example.flowerschemistryworkers.models.Bouquet
 import android.example.flowerschemistryworkers.utils.OnItemClickLestenerMyBouquets
-import android.widget.ImageButton
-import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 
 
 class MyBouquetFragment : Fragment(), OnItemClickLestenerMyBouquets {

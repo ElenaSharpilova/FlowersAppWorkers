@@ -24,9 +24,17 @@ class RegistrationActivity : AppCompatActivity() {
         }
         showPassword(isShowPass)
 
+        val phoneNumber = "+996555555555"
+
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, FloristActivity::class.java)
-            startActivity(intent)
+            if (binding.edTextPhone.text.toString() == phoneNumber){
+                val intent = Intent(this, CourierActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, FloristActivity::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 

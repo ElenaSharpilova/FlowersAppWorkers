@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:context=".ui.fragments.СonstructorBouquetFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/tv_add_bouquet"
+            style="@style/TextView_22sp_medium"
+            android:text="Добавить новый букет"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_take_photo"
+            android:layout_width="250dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="13dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_bouquet">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp"
+                    android:src="@drawable/ic_take_photo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_txt"
+                    style="@style/TextView_16sp_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Добавить картинку"
+                    android:textColor="@color/pink"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_image"
+                    app:layout_constraintStart_toStartOf="@+id/iv_image"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_title_composition"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="29dp"
+            android:text="@string/composition"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cv_take_photo" />
+
+        <TextView
+            android:id="@+id/tv_title_quantity"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginEnd="25dp"
+            android:text="@string/quantity1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title_composition"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner1"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_composition">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_flowers1"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_quantity1"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_quantity"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_quantity1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="0"
+                android:gravity="center"
+                android:inputType="number"
+                style="@style/TextView_16sp_medium"
+                android:layout_marginStart="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner2"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/conteiner_spinner1">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_flowers2"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_quantity2"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cardview_quantity1"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_quantity2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center"
+                style="@style/TextView_16sp_medium"
+                android:layout_marginStart="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner3"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/conteiner_spinner2">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_flowers3"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_quantity3"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cardview_quantity2"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_quantity3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center"
+                style="@style/TextView_16sp_medium"
+                android:layout_marginStart="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner4"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/conteiner_spinner3">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_flowers4"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_quantity4"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cardview_quantity3"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_quantity4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center"
+                style="@style/TextView_16sp_medium"
+                android:layout_marginStart="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner5"
+            android:layout_width="242dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/conteiner_spinner4">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_flowers5"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_quantity5"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cardview_quantity4"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_quantity5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="0"
+                android:inputType="number"
+                android:gravity="center"
+                style="@style/TextView_16sp_medium"
+                android:layout_marginStart="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/tv_title_name_bouquet"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="30dp"
+            android:text="@string/name_bouquet"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/conteiner_spinner5" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_name_bouquet"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="13dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_name_bouquet"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_name_bouquet"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                style="@style/TextView_16sp_medium"
+                android:hint="Название"
+                android:layout_marginStart="5dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_title_category"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="16dp"
+            android:text="@string/category"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_name_bouquet" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conteiner_spinner_category"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_category">
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_category"
+                style="@style/SpinnerForConstructor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_title_description"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="19dp"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/conteiner_spinner_category" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_description"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="13dp"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_description"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/ed_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                style="@style/TextView_16sp_medium"
+                android:hint="Введите описание"
+                android:layout_marginStart="5dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_title_bouquet_term"
+            style="@style/TextView_12sp_grey"
+            android:layout_marginTop="19dp"
+            android:text="@string/bouquet_term"
+            app:layout_constraintStart_toStartOf="@+id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_description" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_date"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="10dp"
+            android:backgroundTint="@color/pink"
+            android:clickable="true"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_bouquet_term"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="дд.мм.гггг"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear"
+            style="@style/my_button"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/clear"
+            android:textColor="@color/pink"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cv_date"
+            app:strokeColor="@color/pink_dark"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/my_button"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/pink"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline"
+            app:layout_constraintTop_toTopOf="@+id/btn_clear"
+            app:strokeColor="@color/pink_dark"
+            app:strokeWidth="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

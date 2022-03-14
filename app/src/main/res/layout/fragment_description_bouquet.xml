@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,96 +29,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/sliderView"
-            android:layout_width="wrap_content"
-            android:layout_height="317dp"
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_slider1"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:sliderAnimationDuration="500"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderIndicatorAnimationDuration="500"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="@color/text_color"
-            app:sliderIndicatorUnselectedColor="@color/white"
-            app:sliderStartAutoCycle="true">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/im_btn_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/ic_arrow_back"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.smarteist.autoimageslider.SliderView>
+        <ImageView
+            android:id="@+id/im_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
+        style="@style/TextView_20sp_medium"
         android:id="@+id/tv_name_bouquet"
-        style="@style/TextView_26sp_medium"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
         android:text="Букет Аврора"
-        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
     <TextView
-        android:id="@+id/et_description"
+        android:id="@+id/tv_sum"
         style="@style/TextView_16sp_medium"
-        android:layout_width="296dp"
-        android:layout_height="207dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/et_hint"
+        android:layout_marginTop="15dp"
+        android:text="2500"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_name_bouquet" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_review"
-        android:layout_width="156dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button"
-        android:enabled="false"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/reviews"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+    <TextView
+        android:id="@+id/tv_txt"
+        style="@style/TextView_16sp_medium"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/som"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_sum"
+        app:layout_constraintStart_toEndOf="@+id/tv_sum"
+        app:layout_constraintTop_toTopOf="@+id/tv_sum"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        style="@style/TextView_16sp_medium"
+        android:id="@+id/et_description"
+        android:layout_height="207dp"
+        android:layout_marginTop="24dp"
+        android:layout_width="296dp"
+        android:text="@string/et_hint"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sum" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_save"
-        android:layout_width="156dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button_background_extra"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/save"
-        android:textAllCaps="false"
-        android:textColor="@color/pink"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-        app:layout_constraintStart_toEndOf="@+id/btn_review"
-        app:layout_constraintTop_toBottomOf="@+id/et_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
