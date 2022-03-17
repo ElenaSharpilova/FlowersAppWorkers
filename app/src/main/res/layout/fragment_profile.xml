@@ -45,7 +45,7 @@
             android:id="@+id/salary_sum"
             style="@style/TextView_16sp_medium"
             android:layout_marginTop="52dp"
-            android:text="23 0000"
+            android:text="23 000"
             android:textColor="@color/pink"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"

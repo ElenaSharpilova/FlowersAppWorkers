@@ -430,7 +430,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_received_order"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="Получил заказ"
@@ -540,7 +540,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:layout_marginEnd="153dp"
-            android:text="5:00"
+            android:text="1:00"
             android:textColor="@color/pink"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@id/tv_timer"

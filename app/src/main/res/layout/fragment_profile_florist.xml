@@ -46,7 +46,7 @@
             android:id="@+id/salary_sum"
             style="@style/TextView_16sp_medium"
             android:layout_marginTop="52dp"
-            android:text="23 0000"
+            android:text="23 000"
             android:textColor="@color/pink"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -201,6 +201,17 @@
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
         app:layout_constraintStart_toStartOf="@+id/phone_number"
         app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+
+    <TextView
+        android:id="@+id/tv_title_branch"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="20dp"
+        android:text="@string/phone"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
 
 
     <androidx.appcompat.widget.AppCompatButton
