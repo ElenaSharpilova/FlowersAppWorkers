@@ -2,27 +2,27 @@ package android.example.flowerschemistryworkers.viewmodel
 
 import android.example.flowerschemistryworkers.models.OrdersItem
 import android.example.flowerschemistryworkers.repository.Repository
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AllOrdersViewModel (private val repository: Repository): ViewModel() {
+class AllOrdersViewModel (private val repository: Repository): ViewModel(), DefaultLifecycleObserver {
 
-    val ordersResponse = MutableLiveData<List<OrdersItem>>()
-    val errorMessage = MutableLiveData<String>()
+   val ordersLiveData = MutableLiveData<ArrayList<OrdersItem>>()
 
-    fun getOrders(){
-        val response = repository.getAllOrders()
-        response.enqueue(object : Callback<List<OrdersItem>> {
-            override fun onResponse(call: Call<List<OrdersItem>>, response: Response<List<OrdersItem>>) {
-                ordersResponse.postValue(response.body())
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+        getOrders()
+    }
+
+    fun getOrders() {
+        viewModelScope.launch {
+            val response = repository.getAllOrders()
+            if (response.isSuccessful){
+                ordersLiveData.postValue(response.body())
             }
-
-            override fun onFailure(call: Call<List<OrdersItem>>, t: Throwable) {
-                errorMessage.postValue(t.message)
-            }
-        })
+        }
     }
 }

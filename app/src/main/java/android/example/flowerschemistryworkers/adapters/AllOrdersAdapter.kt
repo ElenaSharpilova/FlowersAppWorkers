@@ -3,15 +3,13 @@ package android.example.flowerschemistryworkers.adapters
 import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemAllOrdersBinding
 import android.example.flowerschemistryworkers.models.OrdersItem
-import android.example.flowerschemistryworkers.utils.OnItemClickListenerAllOrders
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 
-class AllOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
+
+class AllOrdersAdapter
     : RecyclerView.Adapter<AllOrdersAdapter.ViewHolder>() {
 
     var listOrders= mutableListOf<OrdersItem>()
@@ -32,16 +30,13 @@ class AllOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
 
     class ViewHolder (item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemAllOrdersBinding.bind(item)
-        fun bind(item: OrdersItem, action:OnItemClickListenerAllOrders) = with(binding){
+        fun bind(item: OrdersItem) = with(binding){
             addressShop.text = item.filial
             addressReceiver.text = item.address
             //tvTime.text = item.date
             tvNameReciever.text = item.recieverName
             //tvSum.text = item.sum.toString()
 
-            itemView.setOnClickListener{
-                action.onItemClick(item)
-            }
         }
     }
 
@@ -51,7 +46,7 @@ class AllOrdersAdapter(val clickListener: OnItemClickListenerAllOrders)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listOrders[position], clickListener)
+        holder.bind(listOrders[position])
     }
 
     override fun getItemCount(): Int {
