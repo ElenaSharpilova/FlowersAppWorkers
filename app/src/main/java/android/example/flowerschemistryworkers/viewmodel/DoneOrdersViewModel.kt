@@ -5,9 +5,10 @@ import android.example.flowerschemistryworkers.repository.Repository
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
-class AllOrdersViewModel (private val repository: Repository): ViewModel(), DefaultLifecycleObserver {
+class DoneOrdersViewModel (private val repository: Repository): ViewModel(),
+    DefaultLifecycleObserver {
 
-   val ordersLiveData = MutableLiveData<ArrayList<OrdersItem>>()
+    val doneOrdersLiveData = MutableLiveData<ArrayList<OrdersItem>>()
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
@@ -16,9 +17,9 @@ class AllOrdersViewModel (private val repository: Repository): ViewModel(), Defa
 
     fun getOrders() {
         viewModelScope.launch {
-            val response = repository.getAllOrders()
+            val response = repository.getDoneOrders()
             if (response.isSuccessful){
-                ordersLiveData.postValue(response.body())
+                doneOrdersLiveData.postValue(response.body())
             }
         }
     }

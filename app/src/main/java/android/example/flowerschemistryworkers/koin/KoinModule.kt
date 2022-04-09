@@ -3,7 +3,9 @@ package android.example.flowerschemistryworkers.koin
 import android.example.flowerschemistryworkers.Constants
 import android.example.flowerschemistryworkers.api.InterfaceAPI
 import android.example.flowerschemistryworkers.repository.Repository
+import android.example.flowerschemistryworkers.viewmodel.ActiveOrdersViewModel
 import android.example.flowerschemistryworkers.viewmodel.AllOrdersViewModel
+import android.example.flowerschemistryworkers.viewmodel.NewOrderViewModel
 import android.example.flowerschemistryworkers.viewmodel.UsersViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,6 +26,9 @@ val retrofitModule = module {
 val viewModules = module {
     viewModel { AllOrdersViewModel(repository = get()) }
     viewModel { UsersViewModel(repository = get()) }
+    viewModel { NewOrderViewModel(repository = get()) }
+    viewModel { ActiveOrdersViewModel(repository = get()) }
+
 }
 
 fun getOkHttp(): OkHttpClient {

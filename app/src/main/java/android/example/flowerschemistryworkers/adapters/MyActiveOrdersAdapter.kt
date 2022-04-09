@@ -3,6 +3,7 @@ package android.example.flowerschemistryworkers.adapters
 import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemMyOrdersActiveBinding
 import android.example.flowerschemistryworkers.models.Order
+import android.example.flowerschemistryworkers.models.OrdersItem
 import android.example.flowerschemistryworkers.utils.MyOrdersDiffUtil
 import android.example.flowerschemistryworkers.utils.OnItemClickListenerMyOrders
 import android.view.LayoutInflater
@@ -14,23 +15,21 @@ import androidx.recyclerview.widget.RecyclerView
 class MyActiveOrdersAdapter
     :RecyclerView.Adapter<MyActiveOrdersAdapter.ViewHolder>() {
 
-    var list = ArrayList <Order>()
-    fun setList(newList: MutableList<Order>){
-        val diffCallback = MyOrdersDiffUtil(list, newList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        list.clear()
-        list.addAll(newList)
-        diffResult.dispatchUpdatesTo(this)
+    private var listOrders = listOf<OrdersItem>()
+
+    fun setList(newList: List<OrdersItem>){
+        listOrders = newList
+        notifyDataSetChanged()
     }
 
     class ViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemMyOrdersActiveBinding.bind(item)
-        fun bind(item: Order) = with(binding){
-            addressShop.text = item.addressShop
-            addressReceiver.text = item.addressReceiver
-            tvTime.text = item.time
-            tvQuantity.text = item.name.toString()
-            tvSum.text = item.sum.toString()
+        fun bind(item: OrdersItem) = with(binding){
+            addressShop.text = "Chui"
+            addressReceiver.text = item.address
+            tvTime.text = item.existTime
+            tvQuantity.text = item.recieverName
+            tvSum.text = item.finalCost.toString()
 
         }
     }
@@ -41,10 +40,10 @@ class MyActiveOrdersAdapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(listOrders[position])
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return listOrders.size
     }
 }

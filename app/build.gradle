@@ -2,7 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id "androidx.navigation.safeargs.kotlin"
+    id "kotlinx-serialization"
 }
 
 android {
@@ -76,4 +78,10 @@ dependencies {
     //Koin
     implementation 'org.koin:koin-android:2.0.1'
     implementation 'org.koin:koin-android-viewmodel:2.0.1'
+
+    //Jwt token
+    implementation 'com.auth0.android:jwtdecode:2.0.1'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
+
 }

@@ -9,15 +9,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistryworkers.databinding.FragmentAllOrdersBinding
-import android.example.flowerschemistryworkers.viewmodel.AllOrdersViewModel
+import android.example.flowerschemistryworkers.models.OrdersItem
+import android.example.flowerschemistryworkers.utils.Delegates
+import android.example.flowerschemistryworkers.viewmodel.NewOrderViewModel
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class AllOrdersFragment : Fragment() {
+class AllOrdersFragment : Fragment(), Delegates.OrderClicked {
     private var _binding: FragmentAllOrdersBinding? = null
     private val binding get() = _binding!!
-    private val ordersViewModel by viewModel<AllOrdersViewModel>()
-    private val ordersAdapter by lazy { AllOrdersAdapter() }
+
+    private val ordersViewModel by viewModel<NewOrderViewModel>()
+    private val  ordersAdapter by lazy{ AllOrdersAdapter(this) }
 
 
 
@@ -36,8 +40,8 @@ class AllOrdersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         lifecycle.addObserver(ordersViewModel)
         setUpRecyclerViewAllOrders()
-        ordersViewModel.ordersLiveData.observe(viewLifecycleOwner){
-            ordersAdapter.setData(it.toList())
+        ordersViewModel.newOrdersLiveData.observe(viewLifecycleOwner){
+            ordersAdapter.setList(it.toList())
         }
     }
 
@@ -45,7 +49,6 @@ class AllOrdersFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 
     private fun setUpRecyclerViewAllOrders(){
         binding.rvAllOrders.apply {
@@ -62,5 +65,8 @@ class AllOrdersFragment : Fragment() {
         binding.progressBar.visibility = View.VISIBLE
     }
 
-
+    override fun onItemClick(order: OrdersItem) {
+        val action = AllOrdersFragmentDirections.actionAllOrdersFragmentToDetailOrderFromAllOrdersFragment(order)
+        findNavController().navigate(action)
+    }
 }

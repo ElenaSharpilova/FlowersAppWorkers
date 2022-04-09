@@ -1,16 +1,25 @@
 package android.example.flowerschemistryworkers.models
 
+import java.io.Serializable
+
+
 data class OrdersItem(
     val addInformation: String,
     val address: String,
-    val bouquet: List<Any>,
+    val bouquet: List<BouquetX>,
+    val bouquetCost: Int,
     val buyerName: String,
     val buyerPhoneNumber: String,
+    val client: Client,
+    val courier: Courier,
     val date: String,
-    val filial: String,
+    val deliveryCost: Int,
+    val existTime: String,
+    val finalCost: Int,
     val id: Int,
-    val payment: String,
+    val orderType: String,
+    val qOfBouquet: Int,
     val recieverName: String,
     val recieverPhoneNumber: String,
     val status: String
-)
+): Serializable

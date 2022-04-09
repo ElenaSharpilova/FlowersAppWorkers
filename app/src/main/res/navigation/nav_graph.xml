@@ -38,7 +38,11 @@
         android:id="@+id/detailOrderFromAllOrdersFragment"
         android:name="android.example.flowerschemistryworkers.ui.fragments.DetailOrderFromAllOrdersFragment"
         android:label="fragment_detail_order_from_all_orders"
-        tools:layout="@layout/fragment_detail_order_from_all_orders" />
+        tools:layout="@layout/fragment_detail_order_from_all_orders" >
+        <argument
+            android:name="order"
+            app:argType="android.example.flowerschemistryworkers.models.OrdersItem" />
+    </fragment>
     <fragment
         android:id="@+id/detailOrderFromMyOrdersFragment"
         android:name="android.example.flowerschemistryworkers.ui.fragments.DetailOrderFromMyOrdersFragment"

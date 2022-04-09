@@ -37,7 +37,7 @@
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_add_bouquet.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_all_orders.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_completed_orders.xml" value="0.20416666666666666" />
-        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_constructor_bouquet.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_constructor_bouquet.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_description_bouquet.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_detail_order_from_all_orders.xml" value="0.33" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/fragment_detail_order_from_my_orders.xml" value="0.2650439486139283" />
@@ -51,6 +51,7 @@
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_card_bouquet_sold.xml" value="0.6493506493506493" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_detail_order.xml" value="0.25" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_my_orders.xml" value="0.3277634961439589" />
+        <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_my_orders_active.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/item_my_orders_completed.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/layout/slider_items.xml" value="0.20416666666666666" />
         <entry key="..\:/MyMobileDev/FlowersChemistryWorkers/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />

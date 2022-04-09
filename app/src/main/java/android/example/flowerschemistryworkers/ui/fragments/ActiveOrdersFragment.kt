@@ -8,18 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistryworkers.databinding.FragmentActiveOrdersBinding
 import android.example.flowerschemistryworkers.models.Order
+import android.example.flowerschemistryworkers.viewmodel.ActiveOrdersViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ActiveOrdersFragment : Fragment() {
     private var _binding: FragmentActiveOrdersBinding? = null
     private val binding get() = _binding!!
     private val adapterActiveOrders by lazy { MyActiveOrdersAdapter() }
-    private val itemListActive by lazy {
-        arrayListOf(
-            Order(1, "ул. Фучика 285", "мкр.Аламедин-1, д.22, кв.134", "11:09", "Айгерим", 2399),
-            Order(2, "ул. Байтик Баатыра 233", "ул. Пушкина 66", "22:07", "Айбек", 1000)
-        )
-    }
+    private val activeOrdersViewModel by viewModel<ActiveOrdersViewModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,18 +26,22 @@ class ActiveOrdersFragment : Fragment() {
         _binding = FragmentActiveOrdersBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        setUpRecyclerViewMyOrdersActive()
         return view
-
-
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lifecycle.addObserver(activeOrdersViewModel)
+        setUpRecyclerViewMyOrdersActive()
+        activeOrdersViewModel.activeOrdersLiveData.observe(viewLifecycleOwner){
+            adapterActiveOrders.setList(it.toList())
+        }
+    }
 
     private fun setUpRecyclerViewMyOrdersActive() {
         binding.rvMyActiveOrders.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = adapterActiveOrders
-            adapterActiveOrders.setList(itemListActive)
         }
     }
 }
