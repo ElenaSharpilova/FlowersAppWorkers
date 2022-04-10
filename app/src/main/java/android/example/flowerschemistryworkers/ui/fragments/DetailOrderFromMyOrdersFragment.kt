@@ -36,7 +36,7 @@ class DetailOrderFromMyOrdersFragment : Fragment() {
         _binding = FragmentDetailOrderFromMyOrdersBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        setUpRecyclerViewDetailOrders()
+        //setUpRecyclerViewDetailOrders()
 
         binding.btnReceivedOrder.setOnClickListener {
             binding.btnReceivedOrder.visibility = View.GONE
@@ -68,12 +68,12 @@ class DetailOrderFromMyOrdersFragment : Fragment() {
         _binding = null
     }
 
-    private fun  setUpRecyclerViewDetailOrders() {
+    /*private fun  setUpRecyclerViewDetailOrders() {
         binding.rvDetailOrder.apply {
             adapter = adapterDetailOrder
             layoutManager = LinearLayoutManager(requireContext())
         }
         adapterDetailOrder.setList(itemListDetailOrder)
-    }
+    }*/
 
 }

@@ -8,20 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistryworkers.models.OrderDetail
+import android.util.Log
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 
 class DetailOrderFromAllOrdersFragment : Fragment() {
     private var _binding: FragmentDetailOrderFromAllOrdersBinding? = null
     private val binding get() = _binding!!
     private val adapterDetailOrder by lazy{ DetailOrderAdapter() }
+    private val args by navArgs<DetailOrderFromAllOrdersFragmentArgs>()
+    val order = args.order.buyerName
 
-    private val itemListDetailOrder by lazy {
-        arrayListOf(
-          OrderDetail(1,"Букет Гармония", 2, 3500),
-          OrderDetail(2,"Ferrero rocher", 1, 500),
-          OrderDetail(3,"Букет Слезы короля", 1, 5500)
-        )
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +28,8 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
         _binding = FragmentDetailOrderFromAllOrdersBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        setUpRecyclerViewDetailOrders()
+            Log.i("myLog", order)
+        //setUpRecyclerViewDetailOrders()
 
         return view
 
@@ -46,6 +45,5 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
             adapter = adapterDetailOrder
             layoutManager = LinearLayoutManager(requireContext())
         }
-        adapterDetailOrder.setList(itemListDetailOrder)
     }
 }

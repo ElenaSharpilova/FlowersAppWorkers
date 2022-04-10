@@ -12,6 +12,7 @@ import android.example.flowerschemistryworkers.databinding.FragmentAllOrdersBind
 import android.example.flowerschemistryworkers.models.OrdersItem
 import android.example.flowerschemistryworkers.utils.Delegates
 import android.example.flowerschemistryworkers.viewmodel.NewOrderViewModel
+import android.util.Log
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -67,6 +68,8 @@ class AllOrdersFragment : Fragment(), Delegates.OrderClicked {
 
     override fun onItemClick(order: OrdersItem) {
         val action = AllOrdersFragmentDirections.actionAllOrdersFragmentToDetailOrderFromAllOrdersFragment(order)
+        Log.i("myLog", order.buyerName)
+
         findNavController().navigate(action)
     }
 }

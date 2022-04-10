@@ -2,7 +2,9 @@ package android.example.flowerschemistryworkers.adapters
 
 import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemDetailOrderBinding
+import android.example.flowerschemistryworkers.models.BouquetX
 import android.example.flowerschemistryworkers.models.OrderDetail
+import android.example.flowerschemistryworkers.models.OrdersItem
 import android.example.flowerschemistryworkers.utils.DetailDiffUtil
 import android.view.LayoutInflater
 import android.view.View
@@ -12,22 +14,19 @@ import androidx.recyclerview.widget.RecyclerView
 
 class DetailOrderAdapter: RecyclerView.Adapter<DetailOrderAdapter.MyViewHolder>() {
 
-    private var list = mutableListOf<OrderDetail>()
+    private var list = listOf<BouquetX>()
 
-    fun setList(newList: MutableList<OrderDetail>){
-        val diffCallback = DetailDiffUtil(list, newList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        list.clear()
-        list.addAll(newList)
-        diffResult.dispatchUpdatesTo(this)
+    fun setList(newList: List<BouquetX>){
+        list = newList
+        notifyDataSetChanged()
     }
 
     class MyViewHolder (item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemDetailOrderBinding.bind(item)
-        fun bind(item: OrderDetail) = with(binding){
+        fun bind(item: BouquetX) = with(binding){
             tvName.text = item.name
-            tvQuantity.text = item.quantity.toString()
-            tvSum.text = item.sum.toString()
+          //  tvQuantity.text = item..toString()
+            tvSum.text = item.cost.toString()
         }
     }
 
