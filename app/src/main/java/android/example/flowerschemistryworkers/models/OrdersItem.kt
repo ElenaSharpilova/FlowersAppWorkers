@@ -4,14 +4,12 @@ import java.io.Serializable
 
 
 data class OrdersItem(
-    val addInformation: String,
     val address: String,
     val bouquet: List<BouquetX>,
     val bouquetCost: Int,
     val buyerName: String,
     val buyerPhoneNumber: String,
     val client: Client,
-    val courier: Courier,
     val date: String,
     val deliveryCost: Int,
     val existTime: String,

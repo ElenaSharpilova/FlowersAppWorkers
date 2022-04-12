@@ -23,7 +23,7 @@
 
     <string-array name="period">
         <item>Сегодня</item>
-        <item>Последние 24 часа</item>
+        <item>Вчера</item>
         <item>Последние 7 дней</item>
         <item>Последние 30 дней</item>
         <item>Последние 90 дней</item>

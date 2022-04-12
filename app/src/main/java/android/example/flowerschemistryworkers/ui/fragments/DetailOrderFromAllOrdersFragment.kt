@@ -2,6 +2,7 @@ package android.example.flowerschemistryworkers.ui.fragments
 
 import android.example.flowerschemistryworkers.adapters.DetailOrderAdapter
 import android.example.flowerschemistryworkers.databinding.FragmentDetailOrderFromAllOrdersBinding
+import android.example.flowerschemistryworkers.models.BouquetX
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,7 +18,7 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
     private val binding get() = _binding!!
     private val adapterDetailOrder by lazy{ DetailOrderAdapter() }
     private val args by navArgs<DetailOrderFromAllOrdersFragmentArgs>()
-    val order = args.order.buyerName
+    lateinit var order: List<BouquetX>
 
 
 
@@ -27,9 +28,9 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
     ): View? {
         _binding = FragmentDetailOrderFromAllOrdersBinding.inflate(inflater, container, false)
         val view = binding.root
-
-            Log.i("myLog", order)
-        //setUpRecyclerViewDetailOrders()
+        order = args.order.bouquet
+        setUpRecyclerViewDetailOrders()
+        binding.addressReceiver.text = args.order.address
 
         return view
 
@@ -45,5 +46,6 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
             adapter = adapterDetailOrder
             layoutManager = LinearLayoutManager(requireContext())
         }
+        adapterDetailOrder.setList(order)
     }
 }

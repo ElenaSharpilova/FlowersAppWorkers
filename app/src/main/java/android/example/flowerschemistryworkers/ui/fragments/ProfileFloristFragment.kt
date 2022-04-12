@@ -28,8 +28,6 @@ class ProfileFloristFragment : Fragment() {
         binding.btnExit.setOnClickListener {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
         }
-
-
         return view
 
     }
