@@ -3,13 +3,9 @@ package android.example.flowerschemistryworkers.adapters
 import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemDetailOrderBinding
 import android.example.flowerschemistryworkers.models.BouquetX
-import android.example.flowerschemistryworkers.models.OrderDetail
-import android.example.flowerschemistryworkers.models.OrdersItem
-import android.example.flowerschemistryworkers.utils.DetailDiffUtil
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 class DetailOrderAdapter: RecyclerView.Adapter<DetailOrderAdapter.MyViewHolder>() {

@@ -430,7 +430,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_received_order"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="Получил заказ"
@@ -448,7 +448,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_accepted_order"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="Принял"
@@ -466,7 +466,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_on_way"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="В пути"
@@ -484,7 +484,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_arrived"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="Прибыл"
@@ -502,7 +502,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_completed"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="44dp"
             android:layout_marginTop="26dp"
             android:text="Завершил"

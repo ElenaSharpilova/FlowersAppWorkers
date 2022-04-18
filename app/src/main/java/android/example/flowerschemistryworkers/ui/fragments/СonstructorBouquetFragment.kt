@@ -35,9 +35,8 @@ class СonstructorBouquetFragment : Fragment() {
         val view = binding.root
 
         val itemsFlowers = resources.getStringArray(R.array.flowers)
-        //val quantityFlowers = listOf("","33","5","6","2","5")
-       // val result = itemsFlowers.zip(quantityFlowers) { a: String, b: String -> "$a,$b" }
         val itemsCategories = resources.getStringArray(R.array.categories)
+        val itemsLifecycleBouquet = resources.getStringArray(R.array.life_cycle_bouquet)
 
         val spinnerAdapterFlowers= object : ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, itemsFlowers) {
 
@@ -83,6 +82,28 @@ class СonstructorBouquetFragment : Fragment() {
 
         }
 
+        val spinnerAdapterLifeCycleBouquet = object : ArrayAdapter<String>(requireContext(),android.R.layout.simple_spinner_item, itemsLifecycleBouquet) {
+
+            override fun isEnabled(position: Int): Boolean {
+                return position != 0
+            }
+
+            override fun getDropDownView(
+                position: Int,
+                convertView: View?,
+                parent: ViewGroup
+            ): View {
+                val view: TextView = super.getDropDownView(position, convertView, parent) as TextView
+                if(position == 0) {
+                    view.setTextColor(Color.GRAY)
+                } else {
+                    view.setTextColor(Color.BLACK)
+                }
+                return view
+            }
+
+        }
+
         spinnerAdapterFlowers.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerFlowers1.adapter = spinnerAdapterFlowers
         binding.spinnerFlowers2.adapter = spinnerAdapterFlowers
@@ -92,6 +113,9 @@ class СonstructorBouquetFragment : Fragment() {
 
         spinnerAdapterCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerCategory.adapter = spinnerAdapterCategory
+
+        spinnerAdapterLifeCycleBouquet.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerDate.adapter = spinnerAdapterLifeCycleBouquet
 
 
         binding.spinnerFlowers1.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
@@ -202,36 +226,30 @@ class СonstructorBouquetFragment : Fragment() {
 
         }
 
+        binding.spinnerDate.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val value = parent!!.getItemAtPosition(position).toString()
+                if(value == itemsLifecycleBouquet[0]){
+                    (view as TextView).setTextColor(Color.GRAY)
+                }
+            }
+
+        }
+
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_constructorBouquetFragment_to_addBouquetFragment)
         }
 
-        //Запуск календаря для выбора даты срока годности букета
-        tvDatePicker = binding.tvDate
-        btnDatePicker = binding.cvDate
-        val myCalendar = Calendar.getInstance()
-
-        val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-            myCalendar.set(Calendar.YEAR, year)
-            myCalendar.set(Calendar.MONTH, month)
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            updateLable(myCalendar)
-        }
-
-        binding.cvDate.setOnClickListener {
-            DatePickerDialog(requireContext(), datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-            myCalendar.get(Calendar.DAY_OF_MONTH)).show()
-        }
-
         return view
 
-    }
-
-    @RequiresApi(Build.VERSION_CODES.N)
-    private fun updateLable(myCalendar: Calendar?) {
-        val myFormat = "dd.MM.yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.UK)
-        tvDatePicker.setText(sdf.format(myCalendar?.time))
     }
 
 

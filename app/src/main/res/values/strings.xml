@@ -30,11 +30,23 @@
         <item>Последние 6 месяцев</item>
     </string-array>
 
+    <string-array name="life_cycle_bouquet">
+        <item>Выберите</item>
+        <item>3 дня</item>
+        <item>5 дней</item>
+        <item>7 дней</item>
+    </string-array>
+
+    <string-array name="filial">
+        <item>Токтогула 197а</item>
+        <item>Ибраимова 115</item>
+
+    </string-array>
+
     <string-array name="flowers">
         <item>Выберите цветок</item>
         <item>Розы</item>
         <item>Лилии</item>
-        <item>Домашие</item>
         <item>Гортензии</item>
         <item>Ромашки</item>
         <item>Гермини</item>
@@ -43,13 +55,13 @@
 
     <string-array name="categories">
         <item>Выберите категорию</item>
-        <item>Розы</item>
-        <item>Лилии</item>
-        <item>Домашие</item>
-        <item>Гортензии</item>
-        <item>Ромашки</item>
-        <item>Гермини</item>
-        <item>Игрушки</item>
+        <item>Для девушки</item>
+        <item>Популярные</item>
+        <item>На день рождения</item>
+        <item>Для любимой</item>
+        <item>Для коллеги</item>
+        <item>Скидки</item>
+        <item>Рождение ребенка</item>
     </string-array>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

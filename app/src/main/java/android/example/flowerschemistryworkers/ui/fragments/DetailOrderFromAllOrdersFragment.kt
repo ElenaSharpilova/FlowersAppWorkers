@@ -31,6 +31,11 @@ class DetailOrderFromAllOrdersFragment : Fragment() {
         order = args.order.bouquet
         setUpRecyclerViewDetailOrders()
         binding.addressReceiver.text = args.order.address
+        binding.nameReceiver.text = args.order.recieverName
+        binding.phoneReceiver.text = args.order.recieverPhoneNumber
+        binding.nameSender.text = args.order.buyerName
+        binding.phoneNumberSender.text = args.order.buyerPhoneNumber
+      binding.tvTotalSum.text = args.order.finalCost.toString()
 
         return view
 

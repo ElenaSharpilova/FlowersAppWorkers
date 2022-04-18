@@ -17,10 +17,6 @@ import android.widget.Toast
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    lateinit var sharedPreferences: UserPreferences
-    lateinit var name: String
-    lateinit var number: String
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,21 +24,14 @@ class ProfileFragment : Fragment() {
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val view = binding.root
-        name = binding.name.text.toString()
-        number = binding.phoneNumber.text.toString()
-        sharedPreferences =  UserPreferences(requireContext())
-
 
         binding.btnExit.setOnClickListener {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
         }
-        val shareName = sharedPreferences.fetchUserName()
-        name = shareName.toString()
-        Log.i("MyLog", name)
-
 
         return view
     }
+
 
 
     override fun onDestroy() {

@@ -74,22 +74,6 @@
             app:layout_constraintBottom_toTopOf="@+id/salary_sum"
             app:layout_constraintStart_toStartOf="@+id/salary_sum" />
 
-        <TextView
-            android:id="@+id/tv_title_order_done"
-            style="@style/TextView_12sp_grey"
-            android:layout_marginTop="8dp"
-            android:text="Продано букетов"
-            app:layout_constraintStart_toStartOf="@+id/salary_sum"
-            app:layout_constraintTop_toBottomOf="@+id/salary_sum" />
-
-        <TextView
-            android:id="@+id/tv_title_order_done_quantety"
-            style="@style/TextView_12sp_grey"
-            android:layout_marginStart="2dp"
-            android:text="38"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_title_order_done"
-            app:layout_constraintStart_toEndOf="@+id/tv_title_order_done"
-            app:layout_constraintTop_toTopOf="@+id/tv_title_order_done" />
 
         <ImageView
             android:id="@+id/iv_1"
@@ -157,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title_my_data" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/name_florist"
         style="@style/TextView_16sp_medium"
         android:layout_marginTop="8dp"
         android:text="Адилет"
@@ -172,8 +156,8 @@
         android:layout_marginEnd="12dp"
         android:background="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-        app:layout_constraintStart_toStartOf="@+id/name"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintStart_toStartOf="@+id/name_florist"
+        app:layout_constraintTop_toBottomOf="@+id/name_florist" />
 
     <TextView
         android:id="@+id/tv_title_phone"
@@ -181,15 +165,23 @@
         android:layout_marginTop="20dp"
         android:text="@string/phone"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name_florist" />
 
     <TextView
-        android:id="@+id/phone_number"
+        android:id="@+id/phone_number_florist"
         style="@style/TextView_16sp_medium"
         android:layout_marginTop="8dp"
         android:text="+996 773 123 456"
         app:layout_constraintStart_toStartOf="@+id/start_guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_phone" />
+
+    <TextView
+        android:id="@+id/tv_title_filial"
+        style="@style/TextView_12sp_grey"
+        android:layout_marginTop="20dp"
+        android:text="Выберите филиал"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_florist" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/line2"
@@ -199,8 +191,8 @@
         android:layout_marginEnd="12dp"
         android:background="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-        app:layout_constraintStart_toStartOf="@+id/phone_number"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintStart_toStartOf="@+id/phone_number_florist"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_florist" />
 
 
     <TextView
@@ -209,7 +201,33 @@
         android:layout_marginTop="20dp"
         android:text="@string/phone"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name_florist" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conteiner_filial"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_with_radius_corner"
+        app:layout_constraintEnd_toStartOf="@id/end_guideline"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_filial">
+
+        <Spinner
+            android:id="@+id/spinner_filial"
+            style="@style/MySpinnerLook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/filial"
+            android:paddingStart="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -225,6 +243,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_florist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

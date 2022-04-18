@@ -156,7 +156,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title_my_data" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/name_couruer"
         style="@style/TextView_16sp_medium"
         android:layout_marginTop="8dp"
         android:text="Адилет"
@@ -171,8 +171,8 @@
         android:layout_marginEnd="12dp"
         android:background="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-        app:layout_constraintStart_toStartOf="@+id/name"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintStart_toStartOf="@+id/name_couruer"
+        app:layout_constraintTop_toBottomOf="@+id/name_couruer" />
 
     <TextView
         android:id="@+id/tv_title_phone"
@@ -180,10 +180,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/phone"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name_couruer" />
 
     <TextView
-        android:id="@+id/phone_number"
+        android:id="@+id/phone_number_couruer"
         style="@style/TextView_16sp_medium"
         android:layout_marginTop="8dp"
         android:text="+996 773 123 456"
@@ -198,8 +198,8 @@
         android:layout_marginEnd="12dp"
         android:background="@color/grey"
         app:layout_constraintEnd_toStartOf="@+id/end_guideline"
-        app:layout_constraintStart_toStartOf="@+id/phone_number"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintStart_toStartOf="@+id/phone_number_couruer"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_couruer" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -213,6 +213,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_number_couruer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

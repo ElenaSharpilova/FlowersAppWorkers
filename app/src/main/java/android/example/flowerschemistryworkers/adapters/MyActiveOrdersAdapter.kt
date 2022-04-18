@@ -3,33 +3,32 @@ package android.example.flowerschemistryworkers.adapters
 import android.example.flowerschemistryworkers.R
 import android.example.flowerschemistryworkers.databinding.ItemMyOrdersActiveBinding
 import android.example.flowerschemistryworkers.models.Order
-import android.example.flowerschemistryworkers.models.OrdersItem
-import android.example.flowerschemistryworkers.utils.MyOrdersDiffUtil
 import android.example.flowerschemistryworkers.utils.OnItemClickListenerMyOrders
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class MyActiveOrdersAdapter
-    :RecyclerView.Adapter<MyActiveOrdersAdapter.ViewHolder>() {
+class MyActiveOrdersAdapter (val clickListener: OnItemClickListenerMyOrders):RecyclerView.Adapter<MyActiveOrdersAdapter.ViewHolder>() {
 
-    private var listOrders = listOf<OrdersItem>()
+    private var listOrders = listOf<Order>()
 
-    fun setList(newList: List<OrdersItem>){
+    fun setList(newList: List<Order>){
         listOrders = newList
         notifyDataSetChanged()
     }
 
     class ViewHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ItemMyOrdersActiveBinding.bind(item)
-        fun bind(item: OrdersItem) = with(binding){
+        fun bind(item: Order, action: OnItemClickListenerMyOrders) = with(binding){
             addressShop.text = "Chui"
-            addressReceiver.text = item.address
-            tvTime.text = item.existTime
-            tvQuantity.text = item.recieverName
-            tvSum.text = item.finalCost.toString()
+            addressReceiver.text = item.addressReceiver
+            tvTime.text = item.time
+            tvQuantity.text = item.name
+            tvSum.text = item.sum.toString()
+            itemView.setOnClickListener {
+             action.onItemClickMyOrders(item)
+            }
 
         }
     }
@@ -40,7 +39,7 @@ class MyActiveOrdersAdapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listOrders[position])
+        holder.bind(listOrders[position], clickListener)
     }
 
     override fun getItemCount(): Int {

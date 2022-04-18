@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.example.flowerschemistryworkers.R
+import android.example.flowerschemistryworkers.databinding.BottomSheetBinding
 import android.example.flowerschemistryworkers.databinding.FragmentProfileFloristBinding
 import android.example.flowerschemistryworkers.ui.RegistrationActivity
 import androidx.core.view.isVisible
@@ -28,6 +29,8 @@ class ProfileFloristFragment : Fragment() {
         binding.btnExit.setOnClickListener {
             startActivity(Intent(requireContext(), RegistrationActivity::class.java))
         }
+
+            // val bottomSheetDialog = BottomSheetBinding()
         return view
 
     }

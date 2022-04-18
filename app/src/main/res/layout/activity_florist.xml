@@ -8,8 +8,8 @@
     tools:context=".ui.FloristActivity"
     android:id="@+id/mainlayout2">
 
-    <fragment
-        android:id="@+id/fragmentContainerView"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerViewFlorist"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
